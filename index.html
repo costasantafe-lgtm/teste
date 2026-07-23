@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iguape/SP | Segredos e Curiosidades Históricas</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Descubra as curiosidades impressionantes sobre Iguape-SP: o berço da colonização, a primeira casa de fundição e muito mais.">
+  <meta name="theme-color" content="#0d9488">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ========================================================== */
+    :root {
+      --primary: #0d9488;
+      --primary-hover: #0f766e;
+      --secondary: #d97706;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-title: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08);
+      --shadow-hover: 0 20px 30px -10px rgba(13, 148, 136, 0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark Mode Theme overrides */
+    [data-theme="dark"] {
+      --bg-main: #0b0f17;
+      --bg-card: #151c28;
+      --text-title: #f1f5f9;
+      --text-body: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-color: #1e293b;
+      --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+
+    /* ==========================================================
+       2. RESET & BASE STYLES
+       ========================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-main);
+      color: var(--text-body);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      color: var(--text-title);
+      font-family: var(--font-heading);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================
+       3. HEADER & HERO
+       ========================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    [data-theme="dark"] .header {
+      background: rgba(11, 15, 23, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      color: var(--text-title);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      background: var(--border-color);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--primary);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Filter Controls */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-title);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+    }
+
+    /* ==========================================================
+       4. CARDS GRID & CURIOSITIES
+       ========================================================== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      padding-bottom: 5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(13, 148, 136, 0.3);
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: var(--text-body);
+      font-size: 0.975rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+
+    .like-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .like-btn:hover, .like-btn.liked {
+      color: #e11d48;
+    }
+
+    .like-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================
+       5. FOOTER
+       ========================================================== */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer strong {
+      color: var(--text-title);
+    }
+
+    /* ==========================================================
+       6. RESPONSIVE DESIGN
+       ========================================================== */
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 0 2rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+        🏛️ Iguape Explorer
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar Tema">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-badge">Patrimônio Histórico Nacional</span>
+      <h1>Segredos da Maior Cidade em Extensão de SP</h1>
+      <p>Iguape guarda séculos de história, desde o primeiro ciclo de ouro do Brasil até lendas de navegadores espanhóis e sítios arqueológicos milenares.</p>
+      
+      <!-- Interactive Category Filter -->
+      <div class="filter-bar" id="filterContainer">
+        <button class="filter-btn active" data-category="all">Todas</button>
+        <button class="filter-btn" data-category="historia">História</button>
+        <button class="filter-btn" data-category="geografia">Geografia</button>
+        <button class="filter-btn" data-category="cultura">Cultura</button>
+      </div>
+    </section>
+
+    <!-- Curiosities Grid -->
+    <section class="grid" id="curiositiesGrid">
+      <!-- Dynamic Rendering via JavaScript -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Desenvolvido com ⚡ por um Front-End Engineer Senior.</p>
+      <p style="margin-top:0.5rem">Preservando a história e arquitetura do Vale do Ribeira.</p>
+    </div>
+  </footer>
+
+  <!-- Single File JavaScript Component -->
+  <script>
+    /**
+     * Data Source: Facts about Iguape/SP
+     */
+    const CURIOSITIES_DATA = [
+      {
+        id: 1,
+        title: "A 1ª Casa de Fundição de Ouro do Brasil",
+        category: "historia",
+        text: "Muitos acham que o ouro do Brasil começou em Minas Gerais, mas a primeira Casa de Fundição de Ouro oficial do país foi criada em Iguape por volta de 1630, extraindo ouro de lavagem no Vale do Ribeira.",
+        likes: 142
+      },
+      {
+        id: 2,
+        title: "Maior Município do Estado de SP",
+        category: "geografia",
+        text: "Com mais de 1.970 km², Iguape é o maior município em extensão territorial de todo o estado de São Paulo, abrigando reservas gigantescas de Mata Atlântica preservada.",
+        likes: 98
+      },
+      {
+        id: 3,
+        title: "O Desastre Ecológico do Valo Grande",
+        category: "historia",
+        text: "No século XIX, para facilitar o escoamento do arroz, foi aberto um canal artificial de 3km. A erosão abriu o canal para mais de 100m de largura, alterando para sempre a salinidade e a ecologia do Mar Pequeno.",
+        likes: 210
+      },
+      {
+        id: 4,
+        title: "Berço da Colonização Japonesa",
+        category: "cultura",
+        text: "Através da lei federal nº 11.642, Iguape recebeu o título de 'Berço da Colonização Japonesa no Brasil', abrigando as primeiras colônias agrícolas do estado (Katsura, Registro e Sete Barras).",
+        likes: 175
+      },
+      {
+        id: 5,
+        title: "Sambaquis: Habitações de 5.000 Anos",
+        category: "geografia",
+        text: "A região possui diversos Sambaquis — imensos montes de conchas e vestígios deixados pelos 'Homens do Sambaqui', povos pré-históricos que habitaram o litoral paulista muito antes dos índios Tupi.",
+        likes: 115
+      },
+      {
+        id: 6,
+        title: "Centro Histórico Tombado pelo IPHAN",
+        category: "cultura",
+        text: "Iguape possui o maior acervo arquitetônico preservado em taipa de pilão e taipa francesa do estado. Todo o seu centro urbano é tombado nacionalmente desde 2009.",
+        likes: 130
+      }
+    ];
+
+    /**
+     * Application Module / State Management
+     */
+    class IguapeApp {
+      constructor() {
+        this.data = CURIOSITIES_DATA;
+        this.currentCategory = 'all';
+        this.theme = localStorage.getItem('theme') || 'light';
+        
+        // DOM Elements
+        this.gridEl = document.getElementById('curiositiesGrid');
+        this.filterEl = document.getElementById('filterContainer');
+        this.themeBtn = document.getElementById('themeToggle');
+        this.themeIcon = document.getElementById('themeIcon');
+        this.themeText = document.getElementById('themeText');
+
+        this.init();
+      }
+
+      init() {
+        this.applyTheme(this.theme);
+        this.renderCards();
+        this.bindEvents();
+      }
+
+      bindEvents() {
+        // Theme switcher
+        this.themeBtn.addEventListener('click', () => {
+          this.theme = this.theme === 'light' ? 'dark' : 'light';
+          localStorage.setItem('theme', this.theme);
+          this.applyTheme(this.theme);
+        });
+
+        // Event delegation for category filters
+        this.filterEl.addEventListener('click', (e) => {
+          if (e.target.classList.contains('filter-btn')) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            this.currentCategory = e.target.dataset.category;
+            this.renderCards();
+          }
+        });
+      }
+
+      applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          this.themeIcon.textContent = '☀️';
+          this.themeText.textContent = 'Claro';
+        } else {
+          this.themeIcon.textContent = '🌙';
+          this.themeText.textContent = 'Escuro';
+        }
+      }
+
+      getFilteredData() {
+        if (this.currentCategory === 'all') return this.data;
+        return this.data.filter(item => item.category === this.currentCategory);
+      }
+
+      handleLike(id) {
+        const item = this.data.find(d => d.id === id);
+        if (item) {
+          item.likes += 1;
+          this.renderCards();
+        }
+      }
+
+      renderCards() {
+        const items = this.getFilteredData();
+
+        if (items.length === 0) {
+          this.gridEl.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted)">Nenhuma curiosidade encontrada nessa categoria.</p>`;
+          return;
+        }
+
+        this.gridEl.innerHTML = items.map(item => `
+          <article class="card" data-id="${item.id}">
+            <div>
+              <span class="card-category">${item.category}</span>
+              <h3>${item.title}</h3>
+              <p>${item.text}</p>
+            </div>
+            <div class="card-footer">
+              <button class="like-btn" onclick="app.handleLike(${item.id})" aria-label="Curtir este fato">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>${item.likes}</span>
+              </button>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+
+    // Initialize App when DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      window.app = new IguapeApp();
+    });
+  </script>
+</body>
+</html>
